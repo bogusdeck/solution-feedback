@@ -17,8 +17,11 @@ const NAV_ITEMS: NavItem[] = [
     href: "/dashboard",
     roles: ["admin", "instructor", "parent", "student"],
   },
-  // Candidates: add your feedback-related nav items here.
-  // Follow the same pattern -- label, href, and which roles can see it.
+  {
+    label: "Feedback",
+    href: "/dashboard/feedback",
+    roles: ["admin", "instructor", "parent", "student"],
+  },
 ];
 
 export default function Sidebar() {
@@ -44,7 +47,7 @@ export default function Sidebar() {
           const active = pathname === item.href;
           return (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.href}
               className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                 active

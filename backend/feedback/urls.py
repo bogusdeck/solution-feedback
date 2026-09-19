@@ -1,10 +1,9 @@
 # feedback/urls.py
-#
-# Wire up your endpoints here.
-# This file is already included in config/urls.py at /api/v1/feedback/
-
 from django.urls import path
+from .views import SubmitFeedbackView, ListFeedbackView, InstructorSummaryView
 
 urlpatterns = [
-    # Your endpoints go here
+    path('', SubmitFeedbackView.as_view(), name='submit-feedback'),
+    path('my/', ListFeedbackView.as_view(), name='list-feedback'),
+    path('instructor-summary/', InstructorSummaryView.as_view(), name='instructor-summary-feedback'),
 ]

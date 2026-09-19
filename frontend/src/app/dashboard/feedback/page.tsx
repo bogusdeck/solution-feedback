@@ -2,18 +2,16 @@
 
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import ActiveClassesCard from "@/components/ActiveClassesCard";
-import ProfileCard from "@/components/ProfileCard";
 import FeedbackFormCard from "@/components/FeedbackFormCard";
 import FeedbackHistoryCard from "@/components/FeedbackHistoryCard";
 import InstructorSummaryCard from "@/components/InstructorSummaryCard";
 
 /**
- * myCDA Dashboard
+ * Session Feedback Page
  *
- * Cards are rendered based on the user's role.
+ * Route: /dashboard/feedback
  */
-export default function DashboardPage() {
+export default function FeedbackPage() {
   const { user } = useAuth();
   const [feedbackRefreshKey, setFeedbackRefreshKey] = useState(0);
 
@@ -26,15 +24,16 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="mb-1 text-xl font-semibold text-gray-900">Dashboard</h1>
+      <h1 className="mb-1 text-xl font-semibold text-gray-900">
+        Session Feedback
+      </h1>
       <p className="mb-6 text-sm text-gray-500">
-        Welcome back, {user.display_name}
+        {isStudentOrParent
+          ? "Submit and view feedback for completed sessions."
+          : "View aggregated and anonymized feedback metrics."}
       </p>
 
-      <div id="feedback" className="grid gap-6 lg:grid-cols-2">
-        <ActiveClassesCard />
-        <ProfileCard />
-
+      <div className="grid gap-6 lg:grid-cols-2">
         {isStudentOrParent && (
           <>
             <FeedbackFormCard
