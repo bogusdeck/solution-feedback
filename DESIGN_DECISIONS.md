@@ -26,7 +26,7 @@ Important note: I calculated the average score per session, and multiplied by se
 
 For "last 10 completed sessions", I ordered the sessions by `scheduled_date` descending.
 
-# Frontend & Trade-offs
+# Frontend
 
 **Eligible sessions logic:** Instead of creating a new custom backend endpoint for eligible sessions, the frontend fetches enrolled classes, sessions, and past feedback, then filters eligible sessions client-side.
 
