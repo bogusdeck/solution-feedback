@@ -8,6 +8,7 @@ import type {
   Session,
   PaginatedResponse,
   SessionFeedback,
+  User,
 } from "@/lib/types";
 import DashboardCard from "./DashboardCard";
 
