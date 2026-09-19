@@ -11,7 +11,6 @@ frontend/next-env.d.ts
 **/__pycache__/
 *.so
 .Python
-backend/db.sqlite3
 backend/db.sqlite3-journal
 
 # Environments
@@ -19,6 +18,8 @@ backend/db.sqlite3-journal
 venv/
 ENV/
 env/
+.env
+*.env
 
 # Logs & OS metadata
 *.log
